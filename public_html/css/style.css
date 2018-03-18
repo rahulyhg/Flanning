@@ -1,0 +1,13 @@
+body {
+    background-image: url("background.jpg");
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+#footer {
+    width: 100%;
+    margin-top: auto !important;
+    flex: 0 0 50px;
+}
