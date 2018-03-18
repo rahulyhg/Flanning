@@ -14,10 +14,9 @@ if (isset($_POST['userinput'])) {
     $select_user = "SELECT mail, password FROM User WHERE mail = '$mail' AND password = '$password'";
     $result = mysqli_query($connection, $select_user);
 
-    if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
-        $_SESSION['login_user'] = $mail;
-        echo $_SESSION['login_user'];
+        $_SESSION['login_user'] = $row["mail"];
         header("Location: index.php");
     }
 
